@@ -1,0 +1,25 @@
+<meta charset="UTF-8">
+<script>
+    function skipLine(numLine){
+        while(numLine){
+            document.write("<br>")
+            numLine--
+        }
+    }
+
+    function show(message){
+        document.write(message)
+        skipLine(1)
+    }
+
+    let totalFamiliares = parseInt(prompt("Informe a quantidade de familiares?"))
+    let idade = 0
+   
+    for ( let i = 0; i < totalFamiliares; i++) {
+        idade += parseInt(prompt("Informe idade do familiar"))
+    }
+
+    const mediaIdades = (idade/totalFamiliares)
+
+    show("A média das idades da sua família é " + mediaIdades)
+</script>

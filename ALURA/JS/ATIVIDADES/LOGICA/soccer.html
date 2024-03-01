@@ -1,0 +1,45 @@
+<meta charset="UTF-8">
+
+<script>
+
+    function skipLines(numLines){
+        while(numLines){
+            document.write("<br>")
+            numLines--
+        }
+    }
+
+    function show(message){
+        document.write(message)
+        skipLines(2)
+    }
+
+    const teamName = prompt("Informe o nome do time")
+    let score 
+    
+    function calculateWins(){
+        const wins = +prompt("Número de vitórias do " + teamName)
+        const draw = parseInt(prompt("Número de empates do " + teamName))
+        score = (wins*3) + draw 
+        return  score
+    }
+
+    function showReport(){
+        const scoreOne = calculateWins()
+        const scoreTwo = calculateWins()
+
+        show("O " + teamName + " fez " + scoreOne + " pontos ano passado.")
+        show("O " + teamName + " fez " + scoreTwo + " pontos este ano.")
+
+        if(scoreTwo > scoreOne){
+            show("O seu time está melhor do que no ano passado." )
+        }else if (scoreTwo < scoreOne){
+            show("O seu time está pior do que no ano passado.")
+        }else {
+            show("Seu time está igual ao ano passado.")
+        }
+    }
+
+    showReport()
+    show("FIM")
+</script>

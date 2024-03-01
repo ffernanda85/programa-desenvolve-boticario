@@ -1,0 +1,25 @@
+<meta charset="UTF-8">
+<script>
+    function skipLine(numLine){
+        while(numLine){
+            document.write("<br>")
+            numLine--
+        }
+    }
+
+    function show(message){
+        document.write(message)
+        skipLine(1)
+    }
+
+    function table(valueTable){
+        show("Tabuada de " + valueTable)
+        for (let i = 1; i <= 10 ; i++) {
+            show(valueTable + " * " + i + " = " + valueTable * i)
+        }
+        show("FIM")
+    }
+
+    table(9)
+
+</script>

@@ -1,0 +1,68 @@
+<meta charset="UTF-8" />
+
+<input type="text" />
+<button>Compare com o meu segredo</button>
+
+<script>
+  document.title = "Adivinha";
+
+  function skipLines(numLines) {
+    while (numLines) {
+      document.write("<br>");
+      numLines--;
+    }
+  }
+
+  function show(message) {
+    document.write(message);
+    skipLines(1);
+  }
+
+  function generatorRandom() {
+    return Math.round(Math.random() * 10); //math.flow() no lugar do round
+  }
+
+  function drawNumber(qtd) {
+    let numbers = [];
+    for (let i = 0; i < qtd; i++) {
+      let numTest = generatorRandom();
+      let found = false;
+
+      for (let i = 0; i < numbers.length; i++) {
+        if (numbers[i] == numTest) {
+          found = true;
+        }
+      }
+      if (!found) {
+        numbers.push(numTest);
+      }else{
+        i--
+      }
+    }
+    return numbers;
+  }
+
+  let randomNumber = drawNumber(5);
+console.log(randomNumber);
+  const input = document.querySelector("input");
+  input.focus();
+  const button = document.querySelector("button");
+
+  function guess() {
+    let found = false;
+
+    for (let position = 0; position < randomNumber.length; position++) {
+      if (input.value == randomNumber[position]) {
+        alert("Você acertou!");
+        found = true;
+        break;
+      }
+    }
+    if (!found) alert("Você Errou!");
+
+    input.value = "";
+    input.focus();
+  }
+
+  button.onclick = guess;
+</script>

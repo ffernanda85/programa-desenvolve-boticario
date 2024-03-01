@@ -1,0 +1,28 @@
+<meta charset="UTF-8">
+
+<script>
+
+    function skipLine(numLine){
+        while(numLine){
+            document.write("<br>")
+            numLine--
+        }
+    }
+
+    function show(message){
+        document.write(message)
+        skipLine(2)
+    }
+
+    let copaYear = 1930
+    const curDate = new Date()
+    const curYear = curDate.getFullYear()
+
+    while(copaYear <= curYear){
+        show("Teve copa em " + copaYear)
+        copaYear += 4
+    }
+
+    show("FIM")
+
+</script>

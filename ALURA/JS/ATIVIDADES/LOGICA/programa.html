@@ -1,0 +1,36 @@
+<meta charset="UTF-8" />
+<title>Programa</title>
+<script>
+
+  function pulaLinha (numLinhas){
+    while (numLinhas) {
+      document.write("<br>")
+      numLinhas--
+    }
+  }
+
+  function mostra(mensagem){
+    document.write(mensagem)
+    pulaLinha(1)
+  }
+
+  const dataAtual = new Date();
+  const anoAtual = dataAtual.getFullYear();
+
+  function calculaIdade() {
+    const nome = prompt("informe seu nome");
+    const anoNascimento = prompt("informe seu ano de nascimento");
+
+    mostra(nome + " nasceu em " + anoNascimento);
+    mostra("e tem " + (anoAtual - anoNascimento) + " anos.");
+  }
+
+  // calculaIdade();
+  const idadeMediaQuandoTemFilhos = 28
+
+  function calculaGeracoes (){
+    mostra((anoAtual-1500)/idadeMediaQuandoTemFilhos)
+  }
+
+  calculaGeracoes()
+</script>

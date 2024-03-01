@@ -1,0 +1,45 @@
+<meta charset="UTF-8">
+
+<script>
+
+    function skipLines(numLines){
+        while(numLines){
+            document.write("<br>")
+            numLines--
+        }
+    }
+
+    function show(message){
+        document.write(message)
+        skipLines(1)
+    }
+    function generatorRandom(){
+        return Math.round(Math.random() * 10)//math.flow() no lugar do round
+    }
+
+    let numberRandom
+    let gamerNumber
+
+    function guessGame(){
+        let exit = true
+        
+        while(exit){
+            gamerNumber = parseInt(prompt("Informe um número de 0 à 10"))
+            numberRandom = generatorRandom()
+
+            if(gamerNumber != numberRandom){
+                // show("Você perdeu, o número oculto foi " + numberRandom + " e você escolheu " + gamerNumber)
+                alert("Você perdeu, o número oculto foi " + numberRandom + " e você escolheu " + gamerNumber)
+                exit = confirm("Você deseja jogar novamente?")
+            } else{
+                // show("PARABÉNS! Você ganhou, o número oculto foi " + numberRandom + " e você escolheu " + gamerNumber)
+                alert("PARABÉNS! Você ganhou, o número oculto foi " + numberRandom + " e você escolheu " + gamerNumber)
+                exit = confirm("Você deseja jogar novamente?")
+            }
+        }
+
+        show("FIM")
+    }
+    guessGame()
+
+</script>

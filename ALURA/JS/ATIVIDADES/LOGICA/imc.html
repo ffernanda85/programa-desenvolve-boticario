@@ -1,0 +1,43 @@
+<meta charset="UTF-8">
+
+<script>
+    document.title = "Programa IMC";
+
+    function skipLines (numLines){
+        while(numLines){
+            document.write("<br>")
+            numLines--
+        }
+    }
+
+    function show(message){
+        document.write(message)
+        skipLines(1)
+    }
+
+    let imc;
+
+    function calculateImc(){
+        const name = prompt("Informe seu nome")
+        const peso = prompt(name + " informe seu peso")
+        const altura = prompt(name + " informe sua altura")
+
+        imc = peso/Math.pow(altura,2)
+    
+    }
+    calculateImc()
+    
+    show("Olá " + name + ", seu IMC é: " + Math.round(imc))
+    
+    if(imc < 18.5){
+        show("Seu IMC está abaixo do indicado pela ANS.")
+    }else if(imc >= 18.5 && imc < 35){
+        show("Seu IMC está normal de acordo com a ANS.")
+    }else {
+        show("Seu IMC está acima do indicado pela ANS.")
+    }
+
+    show("FIM")
+    // calculateImc()
+
+</script>
